@@ -1,0 +1,29 @@
+---
+title: "Expectation-Setting"
+author: "Max Callaghan"
+date: "September 16, 2015"
+output:
+  ioslides_presentation:
+    css: https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css
+    logo: https://raw.githubusercontent.com/christophergandrud/Hertie_Collab_Data_Science/master/img/HertieCollaborativeDataLogo_v1.png
+  beamer_presentation: default
+  slidy_presentation: default
+---
+
+## presentation
+
+```{r}
+a <- 4
+b <- 3
+c <- 4
+
+p <- c(0:10)/10
+
+u_h <- p*b+(1-p)*(a+b+c)
+u_l <- p*a+(1-p)*(c)
+
+plot(p,u_h)
+plot(p,u_l)
+
+```
+
