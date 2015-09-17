@@ -1,0 +1,22 @@
+/*
+html, p, pre {
+  font-size: 40%;
+}
+
+slides > slide:not(.nobackground):before {
+  color: green;
+  font-size: 40%;
+}
+
+*/
+
+.plotslide img {
+  width: 80%;
+  height: 20%;
+}
+
+
+img {
+  display: block;
+  margin: 0 auto;
+}
