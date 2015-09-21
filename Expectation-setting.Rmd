@@ -70,7 +70,7 @@ uk_vote_share
 The Honeymoon period and subsequent cost of governing are observed with striking regularity (otherwise government's wouldn't change), and have produced several theories to explain the phenomenon.
 
 - **Muller (1970)** Weak followers are support a new incumbent because of a bandwagon effect but over time revert to previous allegiances
-- **Stimson (1976)** There is an expectations gap: The simplicity and *optimism* of promises during the campaign creates high expectations that are ultimately disappointed
+- **Stimson (1976)** There is an expectations gap: The simplicity and *optimism* of promises during the campaign create high expectations that are ultimately disappointed
 - **Ostrom and Simon (1985)** "Political events, as well as the effects of the economy" combine to "inform a largely visceral reaction to a president"
 - **Downs (1957)** Governments are elected on a coalition of minorities. With each decision, one more minority is alienated
 
@@ -79,7 +79,7 @@ Green and Jennings' explanatory theory of the costs of government has 4 parts:
 
 - During the honeymoon period, the previous government is being assesed
 - Once the new government is seen as responsible for policy outcomes, negativity bias ensures that their support begins to dwindle
-- This support becomes cumulative, as people store negative information, and new negative information confirms old
+- This decline in support becomes cumulative, as people store negative information, and new negative information confirms old
 - The decline in support comes to a halt as attitudes become fixed over time
 
 ## Results
@@ -89,6 +89,10 @@ Green and Jennings' explanatory theory of the costs of government has 4 parts:
 ## Questions
 
 - Is there anything governments can do?
+
+- How could this affect how governments behave in office?
+
+- Can you think of any exceptions, real or imagined, to this pattern?
 
 - Can anyone spot the difference between these two men?
 
@@ -164,27 +168,46 @@ To test their theory, the authors asked respondents how their opinion would chan
 
 ![rain](img/rain_football.jpg)
 
-Results (III)
+## Results (III) Something missing?
+- The results also report that voters prefer politicians who exceed expectations, even when those are low. Should exceeding expectations be factored into the Utility function for aiming low, so that
 
+$$ U(L) = p\alpha+(1-p)(\gamma+\delta) $$
 
-## bla
-text
+where $\delta$ = the value of exceeding expectations.
 
-```{r}
-a <- 4
-b <- 3
-c <- 4
-d <- 4
+When $\alpha > \delta > \gamma > \beta$, including $\delta$ makes a big difference
 
-p <- c(0:10)/10
+```{r echo=FALSE,message=FALSE, warning=FALSE}
 
-u_h <- p*b+(1-p)*(a+b+c)
-u_l <- p*a+(1-p)*(c)
-u_l_1 <- p*a+(1-p)*(c+d)
+p <- c(0:100)/100
+u <- data.frame(p)
+u$alpha <- 3
+u$beta <- 0.5
+u$gamma <- 1
+u$delta <- 2
 
-plot(p,u_h)
-plot(p,u_l)
-plot(p,u_l_1)
+u$u_h <- u$beta+(1-u$p)*(u$alpha+u$gamma)
+u$u_l <- u$p*u$alpha+(1-u$p)*(u$gamma)
+u$u_l_1 <- u$p*u$alpha+(1-u$p)*(u$gamma+u$delta)
+
+u_long <- gather(u,fun,val,u_h:u_l_1)
+utility_theory <- ggplot(u_long,aes(p,val,colour=fun)) + geom_point()
+utility_theory
 
 ```
+
+## Back to the UK {.miliband}
+
+A few optimistic predictions were made in 2010, the government projected that the budget deficit would be gone by 2015 and that migration would be in the "tens of thousands". The deficit is 3.3% of GDP and migration is up from 240,000 to 260,000. These are the two most important issues to UK voters, but the party increased it's support.
+
+Are there other factors at work?
+
+![miliband](img/miliband_sandwich.jpg)
+
+## Questions
+
+- Can you think of times when politicians have been pessimistic?
+
+- What could the relationship be between negativity bias and optimism?
+
 
