@@ -1,3 +1,3 @@
 # Expectation-Setting
 
-View the slides [here](https://cdn.rawgit.com/mcallaghan/Expectation-Setting/master/Expectation-setting.html)
+View the slides [here](http://mcallaghan.github.io/Expectation-Setting/)
